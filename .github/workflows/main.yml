@@ -1,1 +1,21 @@
 
+name: CI/CD Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run test script
+        run: echo "🎉 CI/CD pipeline is working!"
